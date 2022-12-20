@@ -7,7 +7,8 @@ target 'mpei-app' do
 
   pod 'SnapKit', '~> 5.6.0'
   pod 'SwiftLint'
-  pod 'YandexMapsMobile', '4.2.2-lite'
+  pod 'YandexMapsMobile', '4.2.2-full'
+  pod 'SwipeableTabBarController'
 
   target 'mpei-appTests' do
     inherit! :search_paths

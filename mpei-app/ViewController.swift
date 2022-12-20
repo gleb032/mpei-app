@@ -7,9 +7,9 @@
 
 import UIKit
 import SnapKit
-import YandexMapsMobile
 
 class ViewController: UIViewController {
+    static let tabViewTag = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
