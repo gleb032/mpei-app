@@ -236,8 +236,8 @@
 			children = (
 				2C42F9A229510FCE0081E87F /* CommonUI */,
 				2C42F9862950EC020081E87F /* Professors */,
-				2CE73F662950C44E006C8DC0 /* CampusMapComponent */,
-				2CE73F652950C419006C8DC0 /* TabBarComponent */,
+				2CE73F662950C44E006C8DC0 /* CampusMap */,
+				2CE73F652950C419006C8DC0 /* TabBar */,
 				2CE4F930294FBA9B00A8AD26 /* Resources */,
 				2CE4F92F294FBA7800A8AD26 /* Supporting files */,
 				2C675886294F48EF00914252 /* Info.plist */,
@@ -308,22 +308,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		2CE73F652950C419006C8DC0 /* TabBarComponent */ = {
+		2CE73F652950C419006C8DC0 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				2CE73F61294FD273006C8DC0 /* TabBarViewController.swift */,
 			);
-			path = TabBarComponent;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
-		2CE73F662950C44E006C8DC0 /* CampusMapComponent */ = {
+		2CE73F662950C44E006C8DC0 /* CampusMap */ = {
 			isa = PBXGroup;
 			children = (
 				2CA8FBFD295C84670010C6F7 /* AnnotationsProvider */,
 				2CA8FBFA295C7F990010C6F7 /* Controller */,
 				2CA8FBF9295C7F940010C6F7 /* View */,
 			);
-			path = CampusMapComponent;
+			path = CampusMap;
 			sourceTree = "<group>";
 		};
 		86F3CFF5AFEDA1C9A34E52B2 /* Pods */ = {
