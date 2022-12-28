@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import YandexMapsMobile
+import MapKit
 
 protocol AppInterface {
     var rootViewController: UIViewController { get }
@@ -20,9 +20,29 @@ final class AppGraph: AppInterface {
     }
     
     convenience init() {
+        let searchController: UISearchController = {
+            let search = UISearchController(searchResultsController: nil)
+            search.obscuresBackgroundDuringPresentation = false
+            search.searchBar.placeholder = "Найти преподователя..."
+            search.searchBar.sizeToFit()
+            search.searchBar.searchBarStyle = .prominent
+            search.searchBar.scopeButtonTitles = ["ПМИИ", "ММ"]
+            return search
+        }()
+        let universityCoordinates = CLLocation(
+            latitude: 55.754877,
+            longitude: 37.708185
+        )
         let tabBarControllers = [
-            ProfessorsViewController(professorPresenter: ProfessorPresenter()),
-            MapViewController(mapView: YMKMapView())
+            UINavigationController(
+                rootViewController: ProfessorsViewController(
+                    professorPresenter: ProfessorPresenter(),
+                    searchController: searchController
+                )
+            ),
+            MapViewController(
+                mapView: UniversityMapView(initialLocation: universityCoordinates)
+            )
         ]
         let tabBarItems = [
             UITabBarItem(title: "Преподаватели", image: nil, tag: 0),

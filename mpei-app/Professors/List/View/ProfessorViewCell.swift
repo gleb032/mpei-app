@@ -19,4 +19,12 @@ class ProfessorViewCell: UITableViewCell {
             self.photo.image = UIImage(named: photo ?? "default_photo")
         }
     }
+    
+    func setUp() {
+        backgroundColor = UIColor.ProfessorsTableCell.background
+        layer.borderColor = UIColor.ProfessorsTableCell.border.cgColor
+        layer.borderWidth = 2
+        layer.cornerRadius = 15
+        clipsToBounds = true
+    }
 }

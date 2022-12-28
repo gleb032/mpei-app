@@ -21,12 +21,15 @@
 		2C42F9A1295105140081E87F /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C42F9A0295105140081E87F /* LabelFactory.swift */; };
 		2C675879294F48EC00914252 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675878294F48EC00914252 /* AppDelegate.swift */; };
 		2C67587B294F48EC00914252 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67587A294F48EC00914252 /* SceneDelegate.swift */; };
-		2C67587D294F48EC00914252 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67587C294F48EC00914252 /* ViewController.swift */; };
 		2C675882294F48EF00914252 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C675881294F48EF00914252 /* Assets.xcassets */; };
 		2C675885294F48EF00914252 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C675883294F48EF00914252 /* LaunchScreen.storyboard */; };
 		2C675890294F48EF00914252 /* mpei_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67588F294F48EF00914252 /* mpei_appTests.swift */; };
 		2C67589A294F48F000914252 /* mpei_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675899294F48F000914252 /* mpei_appUITests.swift */; };
 		2C67589C294F48F000914252 /* mpei_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C67589B294F48F000914252 /* mpei_appUITestsLaunchTests.swift */; };
+		2CA8FBF8295C7C630010C6F7 /* MKMapView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8FBF7295C7C630010C6F7 /* MKMapView+Extension.swift */; };
+		2CA8FBFC295C82210010C6F7 /* UniversityMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8FBFB295C82210010C6F7 /* UniversityMapView.swift */; };
+		2CA8FBFF295C84A20010C6F7 /* AnnotationsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8FBFE295C84A20010C6F7 /* AnnotationsProvider.swift */; };
+		2CA8FC01295C86F70010C6F7 /* UniversityAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA8FC00295C86F70010C6F7 /* UniversityAnnotation.swift */; };
 		2CE4F932294FBAF800A8AD26 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4F931294FBAF800A8AD26 /* APIKeys.swift */; };
 		2CE4F934294FBB2800A8AD26 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE4F933294FBB2800A8AD26 /* Keys.plist */; };
 		2CE4F936294FC9F700A8AD26 /* AppGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE4F935294FC9F700A8AD26 /* AppGraph.swift */; };
@@ -70,7 +73,6 @@
 		2C675875294F48EC00914252 /* mpei-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mpei-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C675878294F48EC00914252 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C67587A294F48EC00914252 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2C67587C294F48EC00914252 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2C675881294F48EF00914252 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C675884294F48EF00914252 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C675886294F48EF00914252 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +81,10 @@
 		2C675895294F48F000914252 /* mpei-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mpei-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C675899294F48F000914252 /* mpei_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mpei_appUITests.swift; sourceTree = "<group>"; };
 		2C67589B294F48F000914252 /* mpei_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mpei_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2CA8FBF7295C7C630010C6F7 /* MKMapView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Extension.swift"; sourceTree = "<group>"; };
+		2CA8FBFB295C82210010C6F7 /* UniversityMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityMapView.swift; sourceTree = "<group>"; };
+		2CA8FBFE295C84A20010C6F7 /* AnnotationsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsProvider.swift; sourceTree = "<group>"; };
+		2CA8FC00295C86F70010C6F7 /* UniversityAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityAnnotation.swift; sourceTree = "<group>"; };
 		2CE4F931294FBAF800A8AD26 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		2CE4F933294FBB2800A8AD26 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		2CE4F935294FC9F700A8AD26 /* AppGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGraph.swift; sourceTree = "<group>"; };
@@ -125,8 +131,16 @@
 			isa = PBXGroup;
 			children = (
 				2C2304662951F56C0069BDA3 /* UIColor+Extension.swift */,
+				2CA8FBF7295C7C630010C6F7 /* MKMapView+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2C23046829520EB80069BDA3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		2C42F9862950EC020081E87F /* Professors */ = {
@@ -151,6 +165,7 @@
 		2C42F98A2950ECE50081E87F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C23046829520EB80069BDA3 /* Search */,
 				2C42F98C2950ED090081E87F /* ProfessorsViewController.swift */,
 				2C42F9972950F4F20081E87F /* ProfessorViewCell.swift */,
 				2C42F9982950F4F20081E87F /* ProfessorViewCell.xib */,
@@ -231,7 +246,6 @@
 				2C42F9862950EC020081E87F /* Professors */,
 				2CE73F662950C44E006C8DC0 /* CampusMapComponent */,
 				2CE73F652950C419006C8DC0 /* TabBarComponent */,
-				2C67587C294F48EC00914252 /* ViewController.swift */,
 				2CE4F930294FBA9B00A8AD26 /* Resources */,
 				2CE4F92F294FBA7800A8AD26 /* Supporting files */,
 				2C675886294F48EF00914252 /* Info.plist */,
@@ -255,6 +269,31 @@
 				2C67589B294F48F000914252 /* mpei_appUITestsLaunchTests.swift */,
 			);
 			path = "mpei-appUITests";
+			sourceTree = "<group>";
+		};
+		2CA8FBF9295C7F940010C6F7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CA8FBFB295C82210010C6F7 /* UniversityMapView.swift */,
+				2CA8FC00295C86F70010C6F7 /* UniversityAnnotation.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2CA8FBFA295C7F990010C6F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2CE73F672950C471006C8DC0 /* MapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2CA8FBFD295C84670010C6F7 /* AnnotationsProvider */ = {
+			isa = PBXGroup;
+			children = (
+				2CA8FBFE295C84A20010C6F7 /* AnnotationsProvider.swift */,
+			);
+			path = AnnotationsProvider;
 			sourceTree = "<group>";
 		};
 		2CE4F92F294FBA7800A8AD26 /* Supporting files */ = {
@@ -288,7 +327,9 @@
 		2CE73F662950C44E006C8DC0 /* CampusMapComponent */ = {
 			isa = PBXGroup;
 			children = (
-				2CE73F672950C471006C8DC0 /* MapViewController.swift */,
+				2CA8FBFD295C84670010C6F7 /* AnnotationsProvider */,
+				2CA8FBFA295C7F990010C6F7 /* Controller */,
+				2CA8FBF9295C7F940010C6F7 /* View */,
 			);
 			path = CampusMapComponent;
 			sourceTree = "<group>";
@@ -612,13 +653,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C42F98F2950ED180081E87F /* ProfessorPresenter.swift in Sources */,
-				2C67587D294F48EC00914252 /* ViewController.swift in Sources */,
 				2C675879294F48EC00914252 /* AppDelegate.swift in Sources */,
 				2CE4F936294FC9F700A8AD26 /* AppGraph.swift in Sources */,
+				2CA8FBFC295C82210010C6F7 /* UniversityMapView.swift in Sources */,
 				2C2304672951F56C0069BDA3 /* UIColor+Extension.swift in Sources */,
 				2CE73F62294FD273006C8DC0 /* TabBarViewController.swift in Sources */,
+				2CA8FC01295C86F70010C6F7 /* UniversityAnnotation.swift in Sources */,
 				2C42F9A1295105140081E87F /* LabelFactory.swift in Sources */,
 				2C42F9992950F4F20081E87F /* ProfessorViewCell.swift in Sources */,
+				2CA8FBFF295C84A20010C6F7 /* AnnotationsProvider.swift in Sources */,
+				2CA8FBF8295C7C630010C6F7 /* MKMapView+Extension.swift in Sources */,
 				2CE4F932294FBAF800A8AD26 /* APIKeys.swift in Sources */,
 				2C42F9892950EC5B0081E87F /* Professor.swift in Sources */,
 				2C42F98D2950ED090081E87F /* ProfessorsViewController.swift in Sources */,

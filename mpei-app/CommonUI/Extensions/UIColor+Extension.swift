@@ -10,6 +10,10 @@ import UIKit
 private let veryLightGrey = UIColor(white: 0.9, alpha: 1.0)
 
 extension UIColor {
+    struct App {
+        static let background = UIColor.white
+    }
+    
     struct ProfessorsTableCell {
         static let background = veryLightGrey
         

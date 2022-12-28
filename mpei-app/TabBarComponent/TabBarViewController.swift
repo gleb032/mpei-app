@@ -36,7 +36,6 @@ class TabBarViewController: SwipeableTabBarController {
         if let viewControllers = viewControllers {
             selectedViewController = viewControllers[0]
         }
-        // TODO: Color manager
         tabBar.backgroundColor = UIColor.TabBar.background
         swipeAnimatedTransitioning?.animationType = SwipeAnimationType.sideBySide
         tapAnimatedTransitioning?.animationType = SwipeAnimationType.push
@@ -45,7 +44,7 @@ class TabBarViewController: SwipeableTabBarController {
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        // for convenient work with Yandex maps
+        // for convenient work with maps
         isSwipeEnabled = item.tag == MapViewController.tabViewTag
             ? false
             : true

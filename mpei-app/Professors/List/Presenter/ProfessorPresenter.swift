@@ -14,6 +14,20 @@ final class ProfessorPresenter {
         self.professorsViewInputDelegate = viewInputDelegate
     }
     
+    func filterContentForSearch(
+        professors: [Professor],
+        text: String,
+        scope: String?,
+        isSearchBarEmpty: Bool
+    ) -> [Professor] {
+        return professors.filter { professor in
+            let isSameScope = scope == nil ? true : professor.department == scope
+            return isSearchBarEmpty
+                ? isSameScope
+                : isSameScope && professor.name.lowercased().contains(text.lowercased())
+        }
+    }
+    
 }
 
 extension ProfessorPresenter: ProfessorsViewOutputDelegate {
@@ -25,6 +39,6 @@ extension ProfessorPresenter: ProfessorsViewOutputDelegate {
     }
     
     func saveData() {
-        
+        // no need
     }
 }

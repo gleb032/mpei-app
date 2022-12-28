@@ -9,14 +9,17 @@ import UIKit
 import SnapKit
 
 class ProfessorsViewController: UIViewController {
+    private let searchController: UISearchController
     private let tableView = UITableView()
     private let professorPresenter: ProfessorPresenter
     private weak var professorsViewOutputDelegate: ProfessorsViewOutputDelegate?
     
     private var professors: [Professor] = []
+    private lazy var filteredProfessors: [Professor] = [] // for search
     
-    init(professorPresenter: ProfessorPresenter) {
+    init(professorPresenter: ProfessorPresenter, searchController: UISearchController) {
         self.professorPresenter = professorPresenter
+        self.searchController = searchController
         tableView.register(
             UINib(nibName: String(describing: ProfessorViewCell.self), bundle: nil),
             forCellReuseIdentifier: String(describing: ProfessorViewCell.self)
@@ -24,6 +27,8 @@ class ProfessorsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         tableView.delegate = self
         tableView.dataSource = self
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
     }
     
     override func viewDidLoad() {
@@ -35,17 +40,12 @@ class ProfessorsViewController: UIViewController {
         professorPresenter.setUpViewInputDelegate(viewInputDelegate: self)
         professorsViewOutputDelegate = professorPresenter
         professorsViewOutputDelegate?.getData()
+                
+        navigationItem.searchController = searchController
     }
     
     override func viewDidLayoutSubviews() {
         tableView.frame = view.bounds
-    }
-    
-    func tableView(
-        _ tableView: UITableView,
-        heightForRowAt indexPath: IndexPath
-    ) -> CGFloat {
-        100
     }
     
     @available(*, unavailable)
@@ -66,8 +66,29 @@ extension ProfessorsViewController: ProfessorsViewInputDelegate {
 }
 
 extension ProfessorsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.section
+        
+        let currentProfessor = isFiltering
+            ? filteredProfessors[index]
+            : professors[index]
+        
+        let vc = ProfileViewController(
+            name: currentProfessor.name,
+            department: currentProfessor.department,
+            researchWork: currentProfessor.researchWork,
+            photo: currentProfessor.photo
+        )
+        if #available(iOS 15.0, *),
+            let presentationController = presentationController
+                as? UISheetPresentationController {
+            presentationController.detents = [.medium(), .large()]
+        }
+        present(vc, animated: true)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return professors.count
+        return isFiltering ? filteredProfessors.count : professors.count
     }
     
     func tableView(
@@ -84,6 +105,13 @@ extension ProfessorsViewController: UITableViewDelegate {
         heightForHeaderInSection section: Int
     ) -> CGFloat {
         return 3
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        heightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
+        100
     }
 }
 
@@ -106,17 +134,60 @@ extension ProfessorsViewController: UITableViewDataSource {
         }
         let index = indexPath.section
         
-        cell.backgroundColor = UIColor.ProfessorsTableCell.background
-        cell.layer.borderColor = UIColor.ProfessorsTableCell.border.cgColor
-        cell.layer.borderWidth = 2
-        cell.layer.cornerRadius = 15
-        cell.clipsToBounds = true
+        cell.setUp()
+        
+        let currentProfessor = isFiltering
+            ? filteredProfessors[index]
+            : professors[index]
         
         cell.configure(
-            name: professors[index].name,
-            department: professors[index].department,
-            photo: professors[index].photo
+            name: currentProfessor.name,
+            department: currentProfessor.department,
+            photo: currentProfessor.photo
         )
         return cell
+    }
+}
+
+extension ProfessorsViewController: UISearchBarDelegate {
+    private var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    private var isFiltering: Bool {
+        let searchBarScopeIsFiltering = searchController.searchBar
+            .selectedScopeButtonIndex != 0
+        return searchController.isActive
+                && (!isSearchBarEmpty || searchBarScopeIsFiltering)
+    }
+    
+    private func filterContentForSearch(text: String, scope: String?) {
+        filteredProfessors = professorPresenter.filterContentForSearch(
+            professors: professors,
+            text: text,
+            scope: scope,
+            isSearchBarEmpty: isSearchBarEmpty
+        )
+        tableView.reloadData()
+    }
+    
+    func searchBar(
+        _ searchBar: UISearchBar,
+        selectedScopeButtonIndexDidChange selectedScope: Int
+    ) {
+        filterContentForSearch(
+            text: searchBar.text ?? "",
+            scope: searchBar.scopeButtonTitles?[selectedScope]
+        )
+    }
+}
+
+extension ProfessorsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearch(
+            text: searchBar.text ?? "",
+            scope: searchBar.scopeButtonTitles?[searchBar.selectedScopeButtonIndex]
+        )
     }
 }

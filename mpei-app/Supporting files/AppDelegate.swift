@@ -17,9 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        let apiKeys = APIKeys(environment: .testing)
-        YMKMapKit.setApiKey(apiKeys.mapKitKey)
-        YMKMapKit.sharedInstance()
         return true
     }
 
