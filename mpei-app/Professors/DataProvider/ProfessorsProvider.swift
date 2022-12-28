@@ -60,4 +60,35 @@ final class ProfessorsProvider {
             ]
         )
     ]
+    
+    static let mmDepartmentProfessors: [Professor] = [
+        .init(
+            name: "Амосов Андрей Авенирович", department: "ММ", photo: nil,
+            researchWork: [
+                "Нелинейные краевые задачи математической физики",
+                "Численные методы",
+                "Математическое моделирование физических явлений"
+            ]
+        ),
+        .init(
+            name: "Амосова Ольга Алексеевна", department: "ММ", photo: nil,
+            researchWork: [
+                "Численные методы",
+                "Уравнения с частными производными"
+            ]
+        ),
+        .init(
+            name: "Бирюков Алексей Михайлович", department: "ММ", photo: nil,
+            researchWork: [
+                "Задачи комплексной математической физики"
+            ]
+        ),
+        .init(
+            name: "Зубков Павел Валерьевич", department: "ММ", photo: nil,
+            researchWork: [
+                "Нелинейные аналитические задачи математической физики",
+                "Оптимальное управление"
+            ]
+        )
+    ]
 }

@@ -52,3 +52,5 @@ identifier_name:
     - GlobalAPIKey
     - app
     - vc
+    - lhs
+    - rhs

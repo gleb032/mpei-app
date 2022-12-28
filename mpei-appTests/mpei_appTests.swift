@@ -5,34 +5,65 @@
 //  Created by Глеб Фандеев on 18.12.2022.
 //
 
-// swiftlint:disable line_length
-
 import XCTest
 @testable import mpei_app
 
 final class mpei_appTests: XCTestCase {
-
+    private var professorPresenter: ProfessorPresenter!
+    private var professors: [Professor]!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        professorPresenter = ProfessorPresenter()
+        professors = [
+            Professor(
+                name: "Mike", department: "AMC",
+                photo: nil, researchWork: nil
+            ),
+            Professor(
+                name: "Stan", department: "AMC",
+                photo: nil, researchWork: nil
+            ),
+            Professor(
+                name: "Bob", department: "AMC",
+                photo: nil, researchWork: nil
+            )
+        ]
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        professors = []
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testAPIManager() throws {
+        let keys = APIKeys(environment: .testing)
+        let expected = "no-key"
+        XCTAssertEqual(keys.mapKitKey, expected)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testFiltesringContentWithScope() {
+        let filtered = professorPresenter.filterContentForSearch(
+            professors: professors,
+            text: "M", scope: "AMC", isSearchBarEmpty: false
+        )
+        let expected = [
+            Professor(name: "Mike", department: "AMC", photo: nil, researchWork: nil)
+        ]
+        XCTAssertEqual(filtered, expected)
     }
+    
+    func testFiltesringContentWithoutScope() {
+        let filtered = professorPresenter.filterContentForSearch(
+            professors: professors,
+            text: "M", scope: nil, isSearchBarEmpty: true
+        )
+        XCTAssertEqual(filtered, professors)
+    }
+}
 
+// for XCTAssertEqual
+extension Professor: Equatable {
+    public static func == (lhs: Professor, rhs: Professor) -> Bool {
+        return lhs.name == rhs.name && lhs.department == rhs.department &&
+                lhs.photo == rhs.photo && lhs.researchWork == rhs.researchWork
+    }
 }

@@ -34,6 +34,7 @@ extension ProfessorPresenter: ProfessorsViewOutputDelegate {
     func getData() {
         professorsViewInputDelegate?.setupData(
             with: ProfessorsProvider.amcsDepartmentProfessors
+            + ProfessorsProvider.mmDepartmentProfessors
         )
         professorsViewInputDelegate?.displayData()
     }

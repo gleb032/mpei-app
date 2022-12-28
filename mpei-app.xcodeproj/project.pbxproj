@@ -136,13 +136,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		2C23046829520EB80069BDA3 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
 		2C42F9862950EC020081E87F /* Professors */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +158,6 @@
 		2C42F98A2950ECE50081E87F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2C23046829520EB80069BDA3 /* Search */,
 				2C42F98C2950ED090081E87F /* ProfessorsViewController.swift */,
 				2C42F9972950F4F20081E87F /* ProfessorViewCell.swift */,
 				2C42F9982950F4F20081E87F /* ProfessorViewCell.xib */,
