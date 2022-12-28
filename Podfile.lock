@@ -2,27 +2,23 @@ PODS:
   - SnapKit (5.6.0)
   - SwiftLint (0.50.3)
   - SwipeableTabBarController (3.4.2)
-  - YandexMapsMobile (4.2.2-full)
 
 DEPENDENCIES:
   - SnapKit (~> 5.6.0)
   - SwiftLint
   - SwipeableTabBarController
-  - YandexMapsMobile (= 4.2.2-full)
 
 SPEC REPOS:
   trunk:
     - SnapKit
     - SwiftLint
     - SwipeableTabBarController
-    - YandexMapsMobile
 
 SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
   SwipeableTabBarController: 9a218bdee9426d1bfe36d7962f852024bb08d61b
-  YandexMapsMobile: 1fd5f86bc368ad6ba528b199f9477e4a26796567
 
-PODFILE CHECKSUM: 030e6d0df8276d4fdc90a8d1e2542ccd99b70d02
+PODFILE CHECKSUM: 1173a42edd308a4a5c1c3b8bab68f7e3e5dead32
 
 COCOAPODS: 1.11.3

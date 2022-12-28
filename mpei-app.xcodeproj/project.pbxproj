@@ -362,7 +362,6 @@
 				2C675872294F48EC00914252 /* Frameworks */,
 				2C675873294F48EC00914252 /* Resources */,
 				6D8A374953559EB00835E1A0 /* [CP] Embed Pods Frameworks */,
-				950B310AE0328CE36AD3EDA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -401,7 +400,6 @@
 				2C675892294F48F000914252 /* Frameworks */,
 				2C675893294F48F000914252 /* Resources */,
 				17622FEBBEFB1EFB08D58A2F /* [CP] Embed Pods Frameworks */,
-				F2F29BD58F017B4BF6298DBA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -601,40 +599,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mpei-app/Pods-mpei-app-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		950B310AE0328CE36AD3EDA5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mpei-app/Pods-mpei-app-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mpei-app/Pods-mpei-app-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mpei-app/Pods-mpei-app-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2F29BD58F017B4BF6298DBA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mpei-app-mpei-appUITests/Pods-mpei-app-mpei-appUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-mpei-app-mpei-appUITests/Pods-mpei-app-mpei-appUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mpei-app-mpei-appUITests/Pods-mpei-app-mpei-appUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
